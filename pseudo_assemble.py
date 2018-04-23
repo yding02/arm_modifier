@@ -53,8 +53,9 @@ def main(input, output):
   
   zero_count = 0
   for line in code.split('\n'):
-    arglist = parse_insturction(line)
-    if not is_instruction(arglist): 
+    arglist = parse_instruction(line)
+    if not is_instruction(arglist):
+      o.write(line + '\n')
       continue
     instr = decode_instruction(arglist)
     zero_count += zero_start_count(instr)
@@ -64,7 +65,7 @@ def main(input, output):
     zero_count = 0
     zero_count += zero_trail_count(instr)
     #insert current isntruction
-    o.write(line)
+    o.write(line + '\n')
   o.close()
   return
   
