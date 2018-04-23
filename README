@@ -1,0 +1,9 @@
+Requires ARM assembly input
+use 
+  gcc -S yourcode.c
+on ARM device to get ARM assembly
+
+To run program start pseudo_assemble.py in interactive mode
+  python3 -i pseudo_assemble.py
+Then run 
+  main(INPUT_FILE, OUTPUT_FILE)
